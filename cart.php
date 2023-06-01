@@ -237,32 +237,6 @@
           </div>
         </div>
 
-        <!-- <div class="form-group">
-          <label for="name" class="col-sm-3 col-form-label">Item to borrow:</label>
-          <div class="col-sm-9">
-            <?php
-              $conn = new mysqli("localhost","root","","inventorymanagement");
-              $query = "SELECT serialnumber, model, product_name FROM cart";
-              $result = mysqli_query($conn, $query);
-            ?>
-            <?php while ($row = mysqli_fetch_assoc($result)): ?>
-              <div class="row">
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" value="<?php echo $row['product_name']; ?>" readonly>
-                </div>
-
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" value="<?php echo $row['serialnumber']; ?>" readonly>
-                </div>
-
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" value="<?php echo $row['model']; ?>" readonly>
-                </div>
-                <br>
-              </div>
-            <?php endwhile; ?>
-          </div>
-        </div> -->
 
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">

@@ -277,7 +277,7 @@
 
                                             <a href="delete.php?id=<?php echo $row["product_id"] ?>" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash"></i> Delete</a>
 
-                                            <a href=".?id=<?php echo $row["product_id"] ?>" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Return"><i class="fa fa-arrow-left"></i> Return</a>
+                                            <a href="itemtoreturn.php?id=<?php echo $row["product_id"] ?>" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Return"><i class="fa fa-arrow-left"></i> Return</a>
 
                                             </td>
                                         </tr>

@@ -182,8 +182,8 @@
                             <th scope="col">Product Name</th>
                             <th scope="col">Model</th>
                             <th scope="col">Serial Number</th>
+                            <th scope="col">Date Borrowed</th>
                             <th scope="col">Item Return Date</th>
-                         
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -207,6 +207,9 @@
                                 <td><?php echo $row["serialnumber"] ?></td>
                                 <td><?php $date_obj = new DateTime($row["date"]); $date_str = $date_obj->format('m/d/Y');
                                 echo $date_str; ?></td>
+                                <td><?php $date_obj = new DateTime($row["returndate"]); $date_str = $date_obj->format('m/d/Y');
+                                echo $date_str; ?></td>
+                                
                              
                                 <td>
                                     <div class="btn-group">

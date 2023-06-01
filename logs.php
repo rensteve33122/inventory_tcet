@@ -16,6 +16,7 @@ mysqli_query($db, "CREATE TABLE IF NOT EXISTS logs (
     firstname VARCHAR(30) NOT NULL,
     lastname VARCHAR(30) NOT NULL,
     studentnumber VARCHAR(10) NOT NULL,
+    returndate DATE NOT NULL,
     date DATE NOT NULL
 )");
 
@@ -24,8 +25,9 @@ $result = mysqli_query($db, "SELECT * FROM borrow LIMIT 1");
 
 // Insert the data into the logs table
 if ($row = mysqli_fetch_assoc($result)) {
-    $sql = "INSERT INTO logs (product_id, product_name, Model, serialnumber, description, firstname, lastname, studentnumber, date) 
-            VALUES ('".$row['product_id']."', '".$row['product_name']."', '".$row['Model']."', '".$row['serialnumber']."', '".$row['description']."', '".$row['firstname']."', '".$row['lastname']."', '".$row['studentnumber']."', '".$row['date']."')";
+    $returndate = date('Y-m-d'); // Get the current date
+    $sql = "INSERT INTO logs (product_id, product_name, Model, serialnumber, description, firstname, lastname, studentnumber, returndate, date) 
+            VALUES ('".$row['product_id']."', '".$row['product_name']."', '".$row['Model']."', '".$row['serialnumber']."', '".$row['description']."', '".$row['firstname']."', '".$row['lastname']."', '".$row['studentnumber']."', '$returndate', '".$row['date']."')";
     mysqli_query($db, $sql);
 
     // Set the quantity to 1 in the product table
