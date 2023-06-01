@@ -223,9 +223,9 @@
         </div>
         
         <div class="form-group">
-  <label for="studentnumber" class="col-sm-5 control-label">Student Number<span class="text-danger">*</span></label>
+  <label for="studentnumber" class="col-sm-5 control-label">Student/Employee Number<span class="text-danger"></span></label>
   <div class="col-sm-10">
-    <input type="text" autocomplete="off" class="form-control" id="studentnumber" name="studentnumber" placeholder="Enter student number (max 10 characters)" required maxlength="10" aria-label="Student Number" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+    <input type="text" autocomplete="off" class="form-control" id="studentnumber" name="studentnumber" placeholder="Enter Student/Employee Number (max 10 characters)"  maxlength="10" aria-label="Student Number" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
     <small class="form-text text-muted"></small>
   </div>
 </div>
