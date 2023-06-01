@@ -73,7 +73,7 @@
                                   <span>Item Records</span></a>
                     
                                   <li>
-                                <a href="table.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
+                                <a href="itemreports.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
                                     <span>Item Reports</span></a>
                              
 

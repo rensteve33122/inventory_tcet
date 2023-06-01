@@ -74,7 +74,7 @@
                                   <span>Item Records</span></a>
                     
                                   <li>
-                                <a href="table.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
+                                <a href="itemreports.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
                                     <span>Item Reports</span></a>
                              
 
@@ -86,7 +86,7 @@
                                 <li>
                                  <a href="return.php" aria-expanded="true"><i class="bi bi-arrow-return-left"></i>
                                     <span>Return</span></a>
-                                    <li>
+                                    <li class="active">
                                   <a href="reports.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
                                     <span>Reports</span></a>
                                    </li>
