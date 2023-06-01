@@ -16,6 +16,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="Inventmng/srtdash/assets/bootstrap.min.css">
@@ -170,7 +171,8 @@
                         </div>
                     </div>
                     <div class="col-sm-6 clearfix" >
-                        <div class="user-profile pull-right" >
+                        
+                        <div class="user-profile pull-right">
                             <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
                             <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['username'] ?> <i class="fa fa-angle-down" ></i></h4>
                             <div class="dropdown-menu">
