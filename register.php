@@ -8,10 +8,10 @@
     <title>User Registration</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    
 
     <!-- Main css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
 
@@ -20,6 +20,7 @@
         <!-- Sign up form -->
         <section class="signup">
             <div class="container">
+            <div class="particles"></div>
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
