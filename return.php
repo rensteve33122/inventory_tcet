@@ -64,33 +64,31 @@
         <div class="menu-inner">
           <nav>
             <ul class="metismenu" id="menu">
-              <li>
-                <a href="index.php" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
-              </li>
+            <li>
+                                  <a href="index.php" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
+                                </li>
                             
-              <li>
-            <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i>
-              <span>Item Records</span></a>
-          </li>
-        
-          
+                                <li>
+                                <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i>
+                                  <span>Item Records</span></a>
+                    
+                                <li>
+                                <a href="table.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
+                                    <span>Item Reports</span></a>
+                             
 
-          <li>
-            <a href="student.php" aria-expanded="true"><i class="fa fa-table"></i>
-              <span>Borrow</span></a>
-          </li>
-
-          
-
-          <li class="active">
-                            <a href="return.php" aria-expanded="true"><i class="fa fa-table"></i>
-                                <span>Return</span></a>
-                        </li>
-
-                        <li>
-                            <a href="reports.php" aria-expanded="true"><i class="fa fa-table"></i>
-                                <span>Reports</span></a>
-                        </li>
+                                <li>
+                                <a href="student.php" aria-expanded="true"><i class="bi bi-person-plus-fill"></i>
+                                    <span>Borrow</span></a>
+                        
+                        
+                                <li class="active">
+                                 <a href="return.php" aria-expanded="true"><i class="bi bi-arrow-return-left"></i>
+                                    <span>Return</span></a>
+                                <li>
+                                  <a href="reports.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
+                                    <span>Reports</span></a>
+                                   </li>
 
 </li>
 

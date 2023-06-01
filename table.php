@@ -81,12 +81,11 @@
                         </li>
 
                         <li>
-                            <a href="table.php" aria-expanded="true"><i class="bi bi-archive"></i>
-                                <span>Item Reports</span></a>
-                        </li>
+                                <a href="table.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
+                                    <span>Item Reports</span></a>
 
                         <li>
-                            <a href="student.php" aria-expanded="true"><i class="bi bi-person-add"></i>
+                            <a href="student.php" aria-expanded="true"><i class="bi bi-person-plus-fill"></i>
                                 <span>Borrow</span></a>
                         </li>
                         

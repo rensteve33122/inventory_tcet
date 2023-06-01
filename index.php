@@ -103,21 +103,21 @@
                                 <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i>
                                   <span>Item Records</span></a>
                     
-                                <li>
-                                <a href="table.php" aria-expanded="true"><i class="bi bi-archive"></i>
+                                  <li>
+                                <a href="table.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
                                     <span>Item Reports</span></a>
                              
 
-                                <li>
-                                <a href="student.php" aria-expanded="true"><i class="bi bi-person-add"></i>
+                                    <li>
+                                <a href="student.php" aria-expanded="true"><i class="bi bi-person-plus-fill"></i>
                                     <span>Borrow</span></a>
                         
                         
                                 <li>
                                  <a href="return.php" aria-expanded="true"><i class="bi bi-arrow-return-left"></i>
                                     <span>Return</span></a>
-                                <li>
-                                  <a href="reports.php" aria-expanded="true"><i class="fa fa-table"></i>
+                                    <li>
+                                  <a href="reports.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
                                     <span>Reports</span></a>
                                    </li>
 

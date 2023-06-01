@@ -73,25 +73,27 @@
                         <a href="index.php" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                         </li>
 
-                        <li>
-                            <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i>
-                                <span>Item Records</span></a>
-                        </li>
+                                <li>
+                                <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i>
+                                  <span>Item Records</span></a>
+                    
+                                  <li>
+                                <a href="table.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
+                                    <span>Item Reports</span></a>
+                             
 
-                        <li>
-                            <a href="student.php" aria-expanded="true"><i class="fa fa-table"></i>
-                                <span>Borrow </span></a>
-                        </li>
+                                <li class="active">
+                                <a href="student.php" aria-expanded="true"><i class="bi bi-person-add"></i>
+                                    <span>Borrow</span></a>
                         
-                        <li>
-                            <a href="return.php" aria-expanded="true"><i class="fa fa-table"></i>
-                                <span>Return</span></a>
-                        </li>
-
-                        <li>
-                            <a href="reports.php" aria-expanded="true"><i class="fa fa-table"></i>
-                                <span>Reports</span></a>
-                        </li>
+                        
+                                <li>
+                                 <a href="return.php" aria-expanded="true"><i class="bi bi-arrow-return-left"></i>
+                                    <span>Return</span></a>
+                                    <li>
+                                  <a href="reports.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
+                                    <span>Reports</span></a>
+                                   </li>
                         
 
                         </ul>
@@ -193,6 +195,16 @@
             <small class="form-text text-muted"></small>
           </div>
         </div>
+
+        <div class="form-group">
+        <div class="col-sm-10">
+        <input type="radio" id="student" name="occupation" value="student">
+        <label for="student">Student</label>
+
+        <input type="radio" id="employee" name="occupation" value="employee">
+        <label for="employee">Employee</label>
+        </div>
+        </div>
         
         <div class="form-group">
   <label for="studentnumber" class="col-sm-5 control-label">Student Number<span class="text-danger">*</span></label>
@@ -203,7 +215,7 @@
 </div>
         
         <div class="form-group">
-          <label for="date" class="col-sm-3 control-label">Enter Return Date:<span class="text-danger">*</span></label>
+          <label for="date" class="col-sm-3 control-label">Enter Borrowed Date:<span class="text-danger">*</span></label>
           <div class="col-sm-10">
             <input type="date" class="form-control" id="date" placeholder="dd/mm/yyyy" name="date" required>
           </div>
