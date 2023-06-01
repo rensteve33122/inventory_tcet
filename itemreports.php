@@ -75,12 +75,12 @@
                         <a href="index.php" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                         </li>
 
-                        <li class="active">
+                        <li>
                             <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i>
                                 <span>Item Records</span></a>
                         </li>
 
-                        <li>
+                        <li class="active">
                                 <a href="itemreports.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
                                     <span>Item Reports</span></a>
 
@@ -160,49 +160,6 @@
             </div>
             <!-- page title area end -->
 
-
-            
-
-
-<!-- Modal -->
-<div class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="addItemModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addItemModalLabel">Add Item Here</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="POST" action="additem.php">
-          <div class="form-group">
-            <label for="product_name">Product Name:</label>
-            <input type="text" autocomplete="off" class="form-control" name="product_name" placeholder="Product Name Here" required>
-          </div>
-          <div class="form-group">
-            <label for="Model">Model:</label>
-            <input type="text" autocomplete="off" class="form-control" name="Model" placeholder="Model Here" required>
-          </div>
-          <div class="form-group">
-            <label for="serialnumber">Serial number:</label>
-            <input type="text" autocomplete="off" class="form-control" name="serialnumber" placeholder="Serial number Here" required>
-          </div>
-          <div class="form-group">
-            <label for="description">Description:</label>
-            <input type="text" autocomplete="off" class="form-control" name="description" placeholder="Description Here" required>
-          </div>
-          <div class="form-group">
-            <label for="quant">Quantity:</label>
-            <input type="number" name="quant" id="quant" min="1" class="form-control" placeholder="Quantity Here" required readonly value="1">
-
-          </div>
-          <button type="submit" class="btn btn-primary" name="add">Add Item</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 </form>
 </body>
             <div class="main-content-inner">
@@ -212,9 +169,8 @@
     <div class="card">
         <div class="card-body">
             <h4 class="header-title">Products</h4>
-            <!-- Button to trigger the modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addItemModal">Click this to add item</button>
-<br></br>
+
+
             <form action="upload.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="csvFile">Upload CSV:</label>

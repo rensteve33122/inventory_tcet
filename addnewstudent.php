@@ -17,6 +17,7 @@ if (isset($_POST['add'])) {
     $lastname = $_POST['lastname'];
     $studentnumber = $_POST['studentnumber'];
     $date = $_POST['date'];
+    $position = $_POST['position'];
 
     // Create the "borrow" table if it doesn't exist
     $createTableQuery = "CREATE TABLE IF NOT EXISTS borrow (
@@ -30,6 +31,7 @@ if (isset($_POST['add'])) {
         lastname VARCHAR(30) NOT NULL,
         studentnumber VARCHAR(10) NOT NULL,
         date DATE NOT NULL,
+        position VARCHAR(50) NOT NULL,
         FOREIGN KEY (product_id) REFERENCES cart(product_id)
     )";
 
@@ -47,8 +49,8 @@ if (isset($_POST['add'])) {
         $description = $row['description'];
 
         // Insert the borrower's information for each item in the cart
-        $insertQuery = "INSERT INTO borrow (product_id, product_name, Model, serialnumber, description, firstname, lastname, studentnumber, date) 
-                        VALUES ('$productId', '$productName', '$model', '$serialNumber', '$description', '$firstname', '$lastname', '$studentnumber', '$date')";
+        $insertQuery = "INSERT INTO borrow (product_id, product_name, Model, serialnumber, description, firstname, lastname, studentnumber, date, position) 
+                        VALUES ('$productId', '$productName', '$model', '$serialNumber', '$description', '$firstname', '$lastname', '$studentnumber', '$date', '$position')";
 
         $conn->query($insertQuery);
     }

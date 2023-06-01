@@ -78,7 +78,7 @@
                                   <span>Item Records</span></a>
                     
                                   <li>
-                                <a href="table.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
+                                <a href="itemreports.php" aria-expanded="true"><i class="bi bi-archive-fill"></i>
                                     <span>Item Reports</span></a>
                              
 
@@ -213,13 +213,13 @@
         </div>
 
         <div class="form-group">
-        <div class="col-sm-10">
-        <input type="radio" id="student" name="occupation" value="student">
-        <label for="student">Student</label>
+          <div class="col-sm-10">
+            <input type="radio" id="student" name="position" value="student" checked>
+            <label for="student">Student</label>
 
-        <input type="radio" id="employee" name="occupation" value="employee">
-        <label for="employee">Employee</label>
-        </div>
+            <input type="radio" id="employee" name="position" value="employee">
+            <label for="employee">Employee</label>
+          </div>
         </div>
         
         <div class="form-group">
