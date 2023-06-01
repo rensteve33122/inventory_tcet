@@ -197,6 +197,22 @@
         </div>
 
         <div class="form-group">
+          <label for="collegeunit" class="col-sm-2 control-label">College Unit<span class="text-danger">*</span></label>
+          <div class="col-sm-10">
+            <input type="text" autocomplete="off" class="form-control" id="collegeunit" name="collegeunit" placeholder="Enter college unit" required aria-label="College Unit">
+            <small class="form-text text-muted"></small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="event" class="col-sm-2 control-label">Event<span class="text-danger">*</span></label>
+          <div class="col-sm-10">
+            <input type="text" autocomplete="off" class="form-control" id="event" name="event" placeholder="Enter event" required aria-label="Event">
+            <small class="form-text text-muted"></small>
+          </div>
+        </div>
+
+        <div class="form-group">
         <div class="col-sm-10">
         <input type="radio" id="student" name="occupation" value="student">
         <label for="student">Student</label>
