@@ -215,14 +215,14 @@
             <!-- Button to trigger the modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addItemModal">Click this to add item</button>
 <br></br>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="csvFile">Upload CSV:</label>
-                    <input type="file" class="form-control-file" id="csvFile" name="csvFile">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block" name="submit" style="width: 10%;">Upload File</button>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="csvFile">Upload CSV:</label>
+        <input type="file" class="form-control-file" id="csvFile" name="csvFile" accept="text/csv">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block" name="submit" style="width: 10%;">Upload File</button>
+</form>
 
-            </form>
 
             <hr>
 
@@ -277,7 +277,9 @@
 
                                             <a href="delete.php?id=<?php echo $row["product_id"] ?>" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash"></i> Delete</a>
 
-                                            <a href="itemtoreturn.php?id=<?php echo $row["product_id"] ?>" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Return"><i class="fa fa-arrow-left"></i> Return</a>
+                                            <a href="itemtoreturn.php?id=<?php echo $row["product_id"]; ?>" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Return">
+                                                <i class="fa fa-arrow-left"></i> Return
+                                            </a>
 
                                             </td>
                                         </tr>

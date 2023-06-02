@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
     // Check if the user has confirmed the deletion
     if (isset($_GET['confirm'])) {
         // Delete the product from the database
-        $result = mysqli_query($db,"DELETE FROM logs WHERE student_ID=".$_GET['id']);
+        $result = mysqli_query($db,"DELETE FROM logs WHERE product_id=".$_GET['id']);
         if($result===true) {
             echo "success";
         }

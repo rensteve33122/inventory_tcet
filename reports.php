@@ -169,7 +169,8 @@
                 <div class="col-md-6">
                     <div class="d-flex justify-content-end">
                         <button type="submit"  class="btn btn-primary mx-2" name="submit-search">Search</button>
-                        <a href="pdf.php?search=<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" class="btn btn-primary mx-2">Download PDF</a>
+                        <a href="csv.php?search=<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" class="btn btn-primary mx-2">Download CSV</a>
+
                     </div>
                 </div>
             </form>
@@ -177,7 +178,8 @@
                 <table class="table table-hover table-striped">
                     <thead>
                         <tr>
-                           
+                            <th scope="col">First name</th>
+                            <th scope="col">Last Name</th>
                             <th scope="col">Student Number</th>
                             <th scope="col">Product Name</th>
                             <th scope="col">Model</th>
@@ -200,8 +202,10 @@
                             ?>
                             <tr>
                             
-                                
+                                <td><?php echo $row["firstname"] ?></td>
+                                <td><?php echo $row["lastname"] ?></td>
                                 <td><?php echo $row["studentnumber"] ?></td>
+                                
                                 <td><?php echo $row["product_name"] ?></td>
                                 <td><?php echo $row["Model"] ?></td>
                                 <td><?php echo $row["serialnumber"] ?></td>
@@ -213,8 +217,9 @@
                              
                                 <td>
                                     <div class="btn-group">
-                                        <!-- <a href="editstudent.php?id=<?php echo $row["student_ID"] ?>" class="btn btn-sm btn-warning">Edit</a> -->
-                                        <a href="deletereport.php?id=<?php echo $row["student_ID"] ?>" class="btn btn-sm btn-danger">Delete data</a>
+                                        
+                                    <a href="deletereport.php?id=<?php echo $row["product_id"] ?>" class="btn btn-sm btn-danger">Delete data</a>
+
                                     </div>
                                 </td>
                             </tr>

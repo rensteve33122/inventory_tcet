@@ -157,13 +157,13 @@
         <div class="container mt-5">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Search for Students</h4>
+            <h4 class="card-title">Borrowed Items</h4>
         </div>
         <div class="card-body">
             <form method="post" action="" class="row align-items-center">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="text" autocomplete="off" class="form-control" name="search" placeholder="Search by name or student number" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>">
+                        <input type="text" autocomplete="off" class="form-control" name="search" placeholder="Search by Name, Student Number, or Event" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -178,14 +178,13 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Student Number</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col">Model</th>
+                            <th scope="col">Full Name</th>
                             
-                            <!-- <th scope="col">Borrow Item Serial</th>
-                            <th scope="col">Borrow Item</th> -->
-                            <th scope="col">Item Return Date</th>
-                            <!-- <th scope="col">No. Item(s) borrowed</th> -->
+                            <th scope="col">Model</th>
+                            <th scope="col">Serial #</th>
+                            <th scope="col">Event</th>
+                            <th scope="col">Item Borrowed Date</th>
+                            
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -193,7 +192,7 @@
                     <?php
                     $conn = new mysqli("localhost", "root", "", "inventorymanagement");
                     $search = isset($_POST['search']) ? $_POST['search'] : '';
-                    $sql = "SELECT * FROM borrow WHERE firstname LIKE '%$search%' OR lastname LIKE '%$search%' OR studentnumber LIKE '%$search%'";
+                    $sql = "SELECT * FROM borrow WHERE firstname LIKE '%$search%' OR lastname LIKE '%$search%' OR studentnumber LIKE '%$search%' OR event LIKE '%$search%'";
                     $result = $conn->query($sql);
                     $count = 0;
                     if ($result->num_rows > 0) {
@@ -204,9 +203,11 @@
                             
                                 <td><?php echo $count ?></td>
                                
-                                <td><?php echo $row["studentnumber"] ?></td>
-                                <td><?php echo $row["product_name"] ?></td>
+                                
+                                <td><?php echo $row["firstname"] . ", " . $row["lastname"]; ?></td>
                                 <td><?php echo $row["Model"] ?></td>
+                                <td><?php echo $row["serialnumber"] ?></td>
+                                <td><?php echo $row["event"] ?></td>
                             
                                 <td><?php $date_obj = new DateTime($row["date"]); $date_str = $date_obj->format('m/d/Y');
                                 echo $date_str; ?></td>

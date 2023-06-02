@@ -20,8 +20,11 @@ mysqli_query($db, "CREATE TABLE IF NOT EXISTS logs (
     date DATE NOT NULL
 )");
 
-// Retrieve one row of data from the borrow table
-$result = mysqli_query($db, "SELECT * FROM borrow LIMIT 1");
+// Retrieve the product_id from the URL
+$product_id = $_GET['id'];
+
+// Retrieve the specific row from the borrow table based on product_id
+$result = mysqli_query($db, "SELECT * FROM borrow WHERE product_id = $product_id LIMIT 1");
 
 // Insert the data into the logs table
 if ($row = mysqli_fetch_assoc($result)) {
