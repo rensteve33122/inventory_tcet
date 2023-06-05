@@ -26,34 +26,56 @@ if (mysqli_connect_errno())
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
 
+
+
+// Create table if not exists
+$query = "CREATE TABLE IF NOT EXISTS product (
+  product_id INT AUTO_INCREMENT PRIMARY KEY,
+  
+  product_name VARCHAR(255),
+  Model VARCHAR(255),
+  quantity INT,
+  serialnumber VARCHAR(255),
+  description VARCHAR(255),
+  datecreated DATE
+)";
+
+if (mysqli_query($db, $query)) {
+echo "Table created successfully";
+} else {
+echo "Error creating table: " . mysqli_error($db);
+}
+
+
+
+
+
+
 // Add item
 if (isset($_POST['add'])) {
   // receive all input values from the form
-  echo "connect";
-  $item_name=mysqli_real_escape_string($db, $_POST['product_name']);
-  $Model=mysqli_real_escape_string($db, $_POST['Model']);
-  $quant=mysqli_real_escape_string($db, $_POST['quant']);
-  $serialnumber=mysqli_real_escape_string($db, $_POST['serialnumber']);
-  $description=mysqli_real_escape_string($db, $_POST['description']);
-  
-  
-    $query = "INSERT INTO product (product_name,Model,quantity,serialnumber,description) 
-  			  VALUES('$item_name','$Model','$quant','$serialnumber','$description')";
+  $item_name = mysqli_real_escape_string($db, $_POST['product_name']);
+  $Model = mysqli_real_escape_string($db, $_POST['Model']);
+  $quant = mysqli_real_escape_string($db, $_POST['quant']);
+  $serialnumber = mysqli_real_escape_string($db, $_POST['serialnumber']);
+  $description = mysqli_real_escape_string($db, $_POST['description']);
 
-      if(mysqli_query($db, $query))
-      {
+  // Get the current date
+  $datecreated = date("Y-m-d");
+
+  $query = "INSERT INTO product (product_name, Model, quantity, serialnumber, description, datecreated) 
+            VALUES ('$item_name', '$Model', '$quant', '$serialnumber', '$description', '$datecreated')";
+
+  if (mysqli_query($db, $query)) {
       echo "<script>alert('Successfully stored');</script>";
-				
-    }
-    else{
-        echo"<script>alert('Somthing wrong!!!');</script>";
-    }
-  	
-  	header('location: table.php');
-  
+  } else {
+      echo "<script>alert('Something went wrong!!!');</script>";
+  }
+
+  header('location: table.php');
 }
 ?>
-<!-->
+<!--
 
 <!DOCTYPE html>
 <html>

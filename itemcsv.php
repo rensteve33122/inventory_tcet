@@ -1,14 +1,11 @@
 <?php
-// Get the search query from the URL
-$search = isset($_GET['search']) ? $_GET['search'] : '';
-
 // Query the database
 $conn = new mysqli("localhost", "root", "", "inventorymanagement");
-$sql = "SELECT * FROM logs WHERE firstname LIKE '%$search%' OR lastname LIKE '%$search%' OR studentnumber LIKE '%$search%'";
+$sql = "SELECT * FROM product";
 $result = $conn->query($sql);
 
 // Set the CSV file name
-$fileName = 'Reports.csv';
+$fileName = 'Inventory.csv';
 
 // Set the appropriate headers for CSV file download
 header('Content-Type: text/csv');
@@ -18,21 +15,20 @@ header('Content-Disposition: attachment; filename="' . $fileName . '"');
 $output = fopen('php://output', 'w');
 
 // Set table header
-$header = array('First Name', 'Last Name', 'Student Number', 'Product Name', 'Model', 'Serial Number', 'Date Borrowed','Date Return');
+$header = array('Product ID', 'Product Name', 'Model', 'Quantity', 'Serial Number', 'Description', 'Date Created');
 fputcsv($output, $header);
 
 // Add data to the CSV file
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data = array(
-            $row['firstname'],
-            $row['lastname'],
-            $row['studentnumber'],
+            $row['product_id'],
             $row['product_name'],
             $row['Model'],
+            $row['quantity'],
             $row['serialnumber'],
-            date('m/d/Y', strtotime($row['returndate'])),
-            date('m/d/Y', strtotime($row['date']))
+            $row['description'],
+            $row['datecreated']
         );
         fputcsv($output, $data);
     }

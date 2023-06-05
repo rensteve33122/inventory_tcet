@@ -341,7 +341,7 @@
           <input type="hidden" name="product_id" id="product_id_modal" value="">
           <div class="form-group">
             <label for="quantity">Quantity Borrowed:</label>
-            <input type="number" class="form-control" id="quantity" name="quantity" min="1" value="1">
+            <input type="number" class="form-control" id="quantity" name="quantity" min="1" value="1" readonly>
           </div>
           <button type="submit" class="btn btn-primary">Add to Cart</button>
         </form>

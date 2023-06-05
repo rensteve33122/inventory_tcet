@@ -157,7 +157,7 @@
         <div class="container mt-5">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Search for Students</h4>
+            <h4 class="card-title">Borrowed History</h4>
         </div>
         <div class="card-body">
             <form method="post" action="" class="row align-items-center">

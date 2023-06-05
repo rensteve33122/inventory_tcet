@@ -11,7 +11,7 @@ mysqli_query($db, "CREATE TABLE IF NOT EXISTS logs (
     product_id INT(6) NOT NULL,
     product_name VARCHAR(50) NOT NULL,
     Model VARCHAR(50) NOT NULL,
-    serialnumber VARCHAR(50) NOT NULL,
+    serialnumber VARCHAR(50) NOT NULL,=
     description TEXT,
     firstname VARCHAR(30) NOT NULL,
     lastname VARCHAR(30) NOT NULL,

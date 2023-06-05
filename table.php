@@ -205,103 +205,94 @@
 </div>
 </form>
 </body>
-            <div class="main-content-inner">
-                <div class="row">
-                    <!-- Contextual Classes start -->
-                    <div class="col-lg-11 mt-5">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="header-title">Products</h4>
-            <!-- Button to trigger the modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addItemModal">Click this to add item</button>
-<br></br>
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label for="csvFile">Upload CSV:</label>
-        <input type="file" class="form-control-file" id="csvFile" name="csvFile" accept="text/csv">
-    </div>
-    <button type="submit" class="btn btn-primary btn-block" name="submit" style="width: 10%;">Upload File</button>
-</form>
-
-
-            <hr>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <form method="get" action="" class="mb-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search by name or serial number" name="search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-primary">Search</button>
-                            </div>
+<div class="main-content-inner">
+    <div class="row">
+        <!-- Contextual Classes start -->
+        <div class="col-lg-11 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Products</h4>
+                    <!-- Button to trigger the modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addItemModal">Add Item</button>
+                    <br><br>
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="csvFile">Upload CSV:</label>
+                            <input type="file" class="form-control-file" id="csvFile" name="csvFile" accept="text/csv">
                         </div>
+                        <button type="submit" class="btn btn-primary btn-block" name="submit" style="width: 10%;">Upload File</button>
                     </form>
-                </div>
-            
-            </div>
 
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col">Model</th>
-                           
-                            <th scope="col">Serial Number</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            $conn = new mysqli("localhost","root","","inventorymanagement");
-                            $search = isset($_GET['search']) ? $_GET['search'] : '';
-                            $sql = "SELECT * FROM product WHERE product_name LIKE '%$search%' OR serialnumber LIKE '%$search%' OR Model LIKE '%$search%'";
-                            $result = $conn->query($sql);
-                            $count = 0;
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $count++;
-                                    ?>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form method="get" action="" class="mb-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search by name or serial number" name="search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary" name="submit-search">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6" >
+                            <a href="itemcsv.php?search=<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" class="btn btn-primary" >Download CSV</a>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Model</th>
+                                    <th scope="col">Serial Number</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Date Created</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $conn = new mysqli("localhost", "root", "", "inventorymanagement");
+                                $search = isset($_GET['search']) ? $_GET['search'] : '';
+                                $sql = "SELECT * FROM product WHERE product_name LIKE '%$search%' OR serialnumber LIKE '%$search%' OR Model LIKE '%$search%'";
+                                $result = $conn->query($sql);
+                                $count = 0;
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        $count++;
+                                ?>
                                         <tr>
                                             <td><?php echo $count ?></td>
                                             <td><?php echo $row["product_name"] ?></td>
                                             <td><?php echo $row["Model"] ?></td>
-                                           
                                             <td><?php echo $row["serialnumber"] ?></td>
                                             <td><?php echo $row["description"] ?></td>
+                                            <td><?php echo $row["datecreated"] ?></td>
                                             <td>
-
-                                            <a href="edit.php?id=<?php echo $row["product_id"] ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i> Edit</a>
-
-                                            <a href="delete.php?id=<?php echo $row["product_id"] ?>" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash"></i> Delete</a>
-
-                                            <a href="itemtoreturn.php?id=<?php echo $row["product_id"]; ?>" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Return">
-                                                <i class="fa fa-arrow-left"></i> Return
-                                            </a>
-
+                                                <a href="edit.php?id=<?php echo $row["product_id"] ?>" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i> Edit</a>
+                                                <a href="delete.php?id=<?php echo $row["product_id"] ?>" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash"></i> Delete</a>
+                                                <a href="itemtoreturn.php?id=<?php echo $row["product_id"]; ?>" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Return"><i class="fa fa-arrow-left"></i> Return</a>
                                             </td>
                                         </tr>
-                                    <?php
-                 
-                 }
-               }
-
-            ?>
-
-                                            </tbody>
-                                        </table>
-           
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-
-
-</div>   
+                                <?php
+                                    }
+                                } else {
+                                    echo '<tr><td colspan="7">No results found</td></tr>';
+                                }
+                                ?>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
                     <!-- Contextual Classes end -->
                    
         <!-- main content area end -->
