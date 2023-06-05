@@ -258,7 +258,9 @@
                                 <?php
                                 $conn = new mysqli("localhost", "root", "", "inventorymanagement");
                                 $search = isset($_GET['search']) ? $_GET['search'] : '';
-                                $sql = "SELECT * FROM product WHERE product_name LIKE '%$search%' OR serialnumber LIKE '%$search%' OR Model LIKE '%$search%'";
+$sql = "SELECT * FROM product WHERE product_name LIKE '%$search%' OR serialnumber LIKE '%$search%' OR Model LIKE '%$search%' OR description LIKE '%$search%'";
+
+
                                 $result = $conn->query($sql);
                                 $count = 0;
                                 if ($result->num_rows > 0) {
